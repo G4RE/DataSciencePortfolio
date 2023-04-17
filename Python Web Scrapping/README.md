@@ -1,4 +1,4 @@
-# DataSciencePortfolio
+# Python Web Scraping
 A collection of selected data science projects to demonstrate skill sets, knowledge, and what I find interesting
 
 ## Contents
@@ -6,11 +6,3 @@ A collection of selected data science projects to demonstrate skill sets, knowle
 * __Python Web Scraping__: Simple web scraping example using Python's `beautifulsoup` and 'selenium'.
 * __SQL__: Examples of executing and formulating SQL queries for selected simulated business cases.
 
-## In Progress
-* __Movement of old projects into this repository__
-  * Machine learning projects (multiple)
-  * Dockerized applications
-* __New and ongoing projects__
-  * More machine learning projects
-    * Focus on deep learning architectures, reinforcement learning, time series applications
- 
