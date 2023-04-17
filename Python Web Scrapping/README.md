@@ -1,8 +1,8 @@
 # Python Web Scraping
-A collection of selected data science projects to demonstrate skill sets, knowledge, and what I find interesting
+A collection of scripts of used to collect and extarct data from the web related to buisness announcements, that are not easily obtainable.
 
 ## Contents
-* __PythonOOP__: An object oriented programming example in Python 3 which will run simulations of the El Farol problem from complexity theory
-* __Python Web Scraping__: Simple web scraping example using Python's `beautifulsoup` and 'selenium'.
-* __SQL__: Examples of executing and formulating SQL queries for selected simulated business cases.
+* __shenzhen_scrapper.py__: A simple web scraping using Python's `beautifulsoup` and `selenium` to extract data.
+* __shenzhen_announcement.csv__: A list of company annoucement focused on the shenzhen stock exchange
+
 
