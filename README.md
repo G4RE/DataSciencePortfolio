@@ -12,5 +12,4 @@ A collection of selected data science projects to demonstrate skill sets, knowle
   * Dockerized applications
 * __New and ongoing projects__
   * More machine learning projects
-    * Focus on deep learning architectures, reinforcement learning, time series applications
  
