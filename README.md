@@ -7,6 +7,7 @@ A collection of selected data science projects to demonstrate skill sets, knowle
 * __SQL__: Examples of executing and formulating SQL queries for selected simulated business cases.
 
 ## In Progress
+* __Python Object Orientrated coding examples__
 * __Movement of old projects into this repository__
   * Machine learning projects (multiple)
   * Dockerized applications
