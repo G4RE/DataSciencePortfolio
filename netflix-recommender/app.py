@@ -2,14 +2,28 @@ import streamlit as st
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-import pickle
+import ast
 
-# Load the dataset
+# Load and preprocess dataset
 @st.cache_data
 def load_data():
-    return pd.read_csv("data/movies.csv")
+    df = pd.read_csv("data/tmdb_2000_credits.csv")
 
-# Preprocess and build similarity matrix
+    def extract_names(field, key, limit=None):
+        try:
+            items = ast.literal_eval(field)
+            names = [item[key] for item in items if key in item]
+            return ' '.join(names[:limit]) if limit else ' '.join(names)
+        except:
+            return ''
+
+    df['cast_clean'] = df['cast'].apply(lambda x: extract_names(x, 'name', limit=5))  # top 5 actors
+    df['director'] = df['crew'].apply(lambda x: next((d['name'] for d in ast.literal_eval(x) if d.get('job') == 'Director'), ''))
+
+    df['combined_features'] = df['cast_clean'] + ' ' + df['director']
+    return df[['title', 'combined_features']]
+
+# Build similarity matrix
 @st.cache_resource
 def create_similarity(data):
     cv = CountVectorizer(max_features=5000, stop_words='english')
@@ -27,8 +41,9 @@ def recommend(movie, data, similarity):
     movies = sorted(distances, key=lambda x: x[1], reverse=True)[1:6]
     return data.iloc[[i[0] for i in movies]]['title'].tolist()
 
-# Streamlit UI
-st.title("🎬 Movie Recommender")
+# Streamlit app UI
+st.title("🎬 Movie Recommender (TMDB 2000)")
+
 data = load_data()
 similarity = create_similarity(data)
 
