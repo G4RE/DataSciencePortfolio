@@ -7,7 +7,7 @@ import ast
 # Load and preprocess dataset
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/tmdb_2000_credits.csv")
+    df = pd.read_csv("/netflix-recommender/data/tmdb_2000_credits.csv")
 
     def extract_names(field, key, limit=None):
         try:
